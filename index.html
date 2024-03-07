@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title> Favorite cartoon App </title>
+	<style>
+		* { font-size:50px; }
+		body { background-color:pink; }
+		h1 , h2{ background-color: black; color:white; width:50%; border-radius:40px; }
+		input[type="radius"] { width:1.5%; height:0.5em; }
+	</style>
+	<script>
+		function find()
+		{
+		event.preventDefault();
+		let name = document.getElementById("name");
+		let cb= document.getElementById("cb");
+		let ls = document.getElementById("ls");
+		let tj = document.getElementById("tj");
+		let msg = document.getElementById("msg");
+
+		if (name.value == "")
+		{
+			alert("u did not enter name ");
+			msg.innerHTML = "";
+			name.focus();
+			return;
+		}
+
+		let choice = "";
+		if (cb.checked)	choice = "Chhota Bheem";
+		else if (ls.checked)	choice = "Little Singham";
+		else		choice = "Tom & Jerry";
+
+		let ans = "name: " + name.value + " choice: " + choice;
+		msg.innerHTML = ans;
+
+		}
+	</script>
+</head>
+
+<body>
+<center>
+	<h1> Favorite Cartoon App </h1>
+	<form onsubmit="find()">
+		<input type="text" placeholder="enter name" id="name" />
+		<br><br>
+		 <input type="radio" name="f" id="cb" /> Chhota Bheem
+		<input type="radio" name="f" id="ls" /> Little Singham
+		<input type="radio" name="f" id="tj" checked={true}/> Tom & Jerry
+		<br><br>
+		<input type= "submit"/>
+	</form>
+		<h2 id="msg" />
+</center>
+</body> 
+</html>		
